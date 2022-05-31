@@ -24,18 +24,7 @@ export default class LoginScreen extends Component {
       password: ""
     };
   }
-
-  handleLogin = (email, password) => {
-    firebase
-      .auth()
-      .signInWithEmailAndPassword(email, password)
-      .then(() => {
-        this.props.navigation.navigate("BottomTab");
-      })
-      .catch(error => {
-        Alert.alert(error.message);
-      });
-  };
+//here make the function//
 
   render() {
     const { email, password } = this.state;
@@ -63,7 +52,8 @@ export default class LoginScreen extends Component {
           />
           <TouchableOpacity
             style={[styles.button, { marginTop: 20 }]}
-            onPress={() => this.handleLogin(email, password)}
+//use the onPress proprty here//
+            
           >
             <Text style={styles.buttonText}>Login</Text>
           </TouchableOpacity>
